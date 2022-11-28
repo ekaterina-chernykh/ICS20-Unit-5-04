@@ -10,8 +10,8 @@
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS20-PWA-Test/sw.js", {
-    scope: "/ICS20-PWA-Test/",
+  navigator.serviceWorker.register("/ICS20-Unit-5-04/sw.js", {
+    scope: "/ICS20-Unit-5-04/",
   })
 }
 
@@ -20,10 +20,13 @@ if (navigator.serviceWorker) {
  */
 function myButtonClicked() {
   // input
-  const height = parseFloat(document.getElementById("height").value)
+  const age = parseFloat(document.getElementById("age").value)
+  const day = document.getElementById("day").value
 
-  // process
-  const volume = 2
-  // output
-  document.getElementById("volume").innerHTML = "Volume is: " + volume + "mm³"
-}
+  if ((age >= 5 || age <= 65) || (day == tuesday || day == thursday)) {
+    document.getElementById("enter").innerHTML = "You can enter the museum for free"
+  }
+  else {
+    document.getElementById("enter").innerHTML = "You need to pay for your ticket"
+  }
+}  
