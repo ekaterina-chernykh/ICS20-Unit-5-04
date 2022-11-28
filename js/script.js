@@ -23,10 +23,11 @@ function myButtonClicked() {
   const age = parseFloat(document.getElementById("age").value)
   const day = document.getElementById("day").value
 
-  if ((age <= 5 || age >= 65) || (day == tuesday || day == thursday)) {
-    document.getElementById("enter").innerHTML = "You can enter the museum for free"
+  if (age <= 5 || age >= 65 || day == tuesday || day == thursday) {
+    document.getElementById("enter").innerHTML =
+      "You can enter the museum for free"
+  } else {
+    document.getElementById("enter").innerHTML =
+      "You need to pay for your ticket"
   }
-  else {
-    document.getElementById("enter").innerHTML = "You need to pay for your ticket"
-  }
-}  
+}
